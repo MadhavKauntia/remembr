@@ -1,0 +1,45 @@
+.landing {
+  height: max-content;
+}
+
+.landing-header {
+  display: block;
+  font-weight: bold;
+  font-size: 45px;
+}
+
+.landing-header__remembr {
+  color: #1da1f2;
+}
+
+.landing-header__description {
+  color: black;
+}
+
+.landing__description {
+  font-size: larger;
+  color: #707983;
+}
+
+.landing__description_small,
+.landing__description_small a {
+  font-size: small;
+  color: #707983;
+}
+
+.landing__button {
+  margin-top: 10px;
+  font-size: 17px;
+  padding: 10px 25px;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  -webkit-transition: 100ms ease-in-out;
+  transition: 100ms ease-in-out;
+  background-color: rgb(29, 161, 242);
+  position: relative;
+}
+
+.linkedin_post {
+  padding-top: 5px;
+}
