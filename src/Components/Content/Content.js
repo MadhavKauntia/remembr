@@ -1,7 +1,8 @@
 import { useState } from "react";
 import Landing from "../Landing/Landing";
 import Login from "../Login/Login";
-import "./Content.css";
+import FlexBox from "../UI/FlexBox/FlexBox";
+import styles from "./Content.module.css";
 
 const Content = (props) => {
   const [getStarted, setGetStarted] = useState(false);
@@ -11,10 +12,10 @@ const Content = (props) => {
     setGetStarted(false);
   };
   return (
-    <div className="content">
+    <FlexBox className={styles.content}>
       {getStarted || <Landing setGetStarted={setGetStarted} />}
       {getStarted && <Login goBackHandler={goBackHandler} />}
-    </div>
+    </FlexBox>
   );
 };
 
