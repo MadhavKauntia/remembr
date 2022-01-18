@@ -1,8 +1,17 @@
 .content {
   padding: 10px;
+  text-align: center;
 }
 
 .logo {
   height: 200px;
   width: 200px;
+}
+
+.container {
+  max-width: 960px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 15px;
+  padding-left: 15px;
 }

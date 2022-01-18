@@ -7,9 +7,12 @@ const AuthProvider = (props) => {
     firstName: "",
     lastName: "",
   });
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const authContext = {
     authDetails: authState,
+    isLoggedIn: isLoggedIn,
     setAuthDetails: setAuthState,
+    setIsLoggedIn: setIsLoggedIn,
   };
   return (
     <AuthContext.Provider value={authContext}>
