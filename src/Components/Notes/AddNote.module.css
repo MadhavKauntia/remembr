@@ -16,13 +16,13 @@
 }
 
 .new {
-  background-color: #9dbae5;
+  background-color: #87d6e0;
 }
 
 textarea {
   border: none;
   resize: none;
-  background-color: #9dbae5;
+  background-color: #87d6e0;
 }
 
 textarea:focus {
