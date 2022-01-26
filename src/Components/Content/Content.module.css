@@ -7,11 +7,3 @@
   height: 200px;
   width: 200px;
 }
-
-.container {
-  max-width: 1200px;
-  margin-right: auto;
-  margin-left: auto;
-  padding-right: 15px;
-  padding-left: 15px;
-}

@@ -17,12 +17,12 @@ const Login = (props) => {
   const onLoginSuccess = (res) => {
     setShowloginButton(false);
     setShowlogoutButton(true);
-    authCtx.setIsLoggedIn(true);
     authCtx.setAuthDetails({
       email: res.profileObj.email,
       firstName: res.profileObj.givenName,
       lastName: res.profileObj.familyName,
     });
+    authCtx.setIsLoggedIn(true);
   };
 
   const onLoginFailure = (res) => {

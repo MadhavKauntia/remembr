@@ -11,8 +11,9 @@ const NotesList = (props) => {
     <div className={styles["notes-list"]}>
       {notes.map((note) => (
         <Note
+          key={note.id}
           id={note.id}
-          text={note.text}
+          text={note.note}
           date={note.date}
           deleteNote={props.deleteNote}
         />

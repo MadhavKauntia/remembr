@@ -7,8 +7,10 @@ const AuthContext = React.createContext({
     lastName: "",
   },
   isLoggedIn: false,
-  setAuthDetails: (authDetails) => {},
-  setIsLoggedIn: (isLoggedIn) => {},
+  setAuthDetails: (authDetails) => { },
+  setIsLoggedIn: (isLoggedIn) => { },
+  notes: [],
+  setNotes: (notes) => { }
 });
 
 export default AuthContext;
