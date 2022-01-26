@@ -14,7 +14,6 @@ const NotesPage = (props) => {
         setNotes(data);
     };
     async function sendNote(note) {
-        console.log(note);
         const response = await fetch(process.env.REACT_APP_BACKEND_URL + '/note', {
             method: "POST",
             body: note,
@@ -29,14 +28,15 @@ const NotesPage = (props) => {
         fetchNotes();
     }
     async function deleteNoteFromDb(id) {
-        console.log(id);
         const response = await fetch(process.env.REACT_APP_BACKEND_URL + '/note?id=' + id, {
             method: "DELETE",
         });
         fetchNotes();
     }
     useEffect(() => {
+        let isMounted = true;
         fetchNotes()
+        return () => { isMounted = false; }
     }, []);
 
     const addNote = (text) => {
