@@ -4,14 +4,18 @@ import styles from './NotesPage.module.css';
 import NotesHeader from './NotesHeader';
 import Search from './Search';
 import NotesList from './NotesList';
+import BarLoader from '../UI/BarLoader/BarLoader';
 
 const NotesPage = (props) => {
     const authCtx = useContext(AuthContext);
     const [notes, setNotes] = useState([]);
+    const [isLoading, setIsLoading] = useState(false);
     const fetchNotes = async () => {
+        setIsLoading(true);
         const response = await fetch(process.env.REACT_APP_BACKEND_URL + '/note?email=' + authCtx.authDetails.email);
         const data = await response.json();
         setNotes(data);
+        setIsLoading(false);
     };
     async function sendNote(note) {
         const response = await fetch(process.env.REACT_APP_BACKEND_URL + '/note', {
@@ -40,23 +44,26 @@ const NotesPage = (props) => {
     }, []);
 
     const addNote = (text) => {
+        setIsLoading(true);
         sendNote(text);
     };
 
     const deleteNote = (id) => {
+        setIsLoading(true);
         deleteNoteFromDb(id);
     };
     const [searchText, setSearchText] = useState("");
     return <div className={styles.container}>
         <NotesHeader />
         <Search handleSearchNote={setSearchText} />
-        <NotesList
+        {isLoading && <BarLoader />}
+        {!isLoading && <NotesList
             notes={notes.filter((note) =>
                 note.note.toLowerCase().includes(searchText)
             )}
             addNote={addNote}
             deleteNote={deleteNote}
-        />
+        />}
     </div>
 }
 
