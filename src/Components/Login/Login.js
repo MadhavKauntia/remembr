@@ -7,9 +7,6 @@ import Header from "../UI/Header/Header";
 import Description from "../UI/Description/Description";
 import AuthContext from "../../Store/auth-context";
 
-const clientId =
-  "867858414838-c9eguojgjfrdgnrngbmtislb25tov0d4.apps.googleusercontent.com";
-
 const Login = (props) => {
   const [showloginButton, setShowloginButton] = useState(true);
   const [showlogoutButton, setShowlogoutButton] = useState(false);
@@ -36,7 +33,7 @@ const Login = (props) => {
       <div>
         <Button onClick={props.goBackHandler}>Go Back</Button>
         <GoogleLogin
-          clientId={clientId}
+          clientId={process.env.REACT_APP_CLIENT_ID}
           buttonText="Sign In"
           onSuccess={onLoginSuccess}
           onFailure={onLoginFailure}
