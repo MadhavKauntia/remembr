@@ -1,12 +1,11 @@
-import logo from "./logo.svg";
-import "./App.css";
 import Content from "./Components/Content/Content";
+import AuthProvider from "./Store/AuthProvider";
 
 function App() {
   return (
-    <div className="App">
+    <AuthProvider>
       <Content />
-    </div>
+    </AuthProvider>
   );
 }
 
